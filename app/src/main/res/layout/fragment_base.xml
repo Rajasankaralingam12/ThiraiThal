@@ -6,9 +6,13 @@
     <LinearLayout
         android:orientation="vertical"
         android:id="@+id/searchView"
-        android:background="@color/colorPrimaryDark"
+        android:background="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp">
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:id="@+id/linLayFragment"

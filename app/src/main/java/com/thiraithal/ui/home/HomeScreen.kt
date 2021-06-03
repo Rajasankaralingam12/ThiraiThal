@@ -8,6 +8,7 @@ import com.thiraithal.R
 import com.thiraithal.ui.videowallpapers.VideoWallpapersFragment
 import com.thiraithal.ui.base.BaseMenuActivity
 import com.thiraithal.ui.homeWallpaper.WallpaperPagerFragment
+import com.thiraithal.ui.upload.UploadFragment
 
 
 class HomeScreen :BaseMenuActivity(){
@@ -48,6 +49,10 @@ class HomeScreen :BaseMenuActivity(){
             R.id.nav_ring_tones->{
                 fragment =
                     WallpapersFragment()
+            }
+            R.id.nav_upload->{
+                fragment =
+                    UploadFragment()
             }
         }
         replaceFragment(menuItem, fragment)

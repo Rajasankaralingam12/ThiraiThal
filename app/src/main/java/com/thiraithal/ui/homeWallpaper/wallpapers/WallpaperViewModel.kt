@@ -2,6 +2,7 @@ package com.thiraithal.ui.homeWallpaper.wallpapers
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.thiraithal.model.BaseResponse
 import com.thiraithal.model.FeaturedModel
 import com.thiraithal.model.PopularWallpaperModel
 import com.thiraithal.service.MainRepository
@@ -14,6 +15,7 @@ class WallpaperViewModel constructor(private val repository: MainRepository)  : 
     val featuresList = MutableLiveData<List<FeaturedModel>>()
     val popularWallpaperModel = MutableLiveData<List<PopularWallpaperModel>>()
     val errorMessage = MutableLiveData<String>()
+    val baseResponse = MutableLiveData<BaseResponse>()
 
     fun getAllFeatures() {
 
@@ -42,4 +44,19 @@ class WallpaperViewModel constructor(private val repository: MainRepository)  : 
             }
         })
     }
+
+    fun addPopularImages(popularWallpaperModel: PopularWallpaperModel) {
+
+        val response = repository.addPopularImages(popularWallpaperModel)
+        response.enqueue(object : Callback<BaseResponse> {
+            override fun onResponse(call: Call<BaseResponse>, response: Response<BaseResponse>) {
+                baseResponse.postValue(response.body())
+            }
+
+            override fun onFailure(call: Call<BaseResponse>, t: Throwable) {
+                errorMessage.postValue(t.message)
+            }
+        })
+    }
+
 }

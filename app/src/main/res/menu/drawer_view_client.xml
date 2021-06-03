@@ -15,5 +15,9 @@
             android:id="@+id/nav_ring_tones"
             android:icon="@drawable/ic_ring_tone"
             android:title="Ringtones" />
+        <item
+            android:id="@+id/nav_upload"
+            android:icon="@drawable/ic_upload"
+            android:title="Upload" />
     </group>
 </menu>

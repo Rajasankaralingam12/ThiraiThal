@@ -1,4 +1,4 @@
-package com.thiraithal.ui.videowallpapers
+package com.thiraithal.ui.upload
 
 import android.app.Activity
 import android.content.Intent
@@ -6,11 +6,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseApp
@@ -22,11 +22,7 @@ import kotlinx.android.synthetic.main.fragment_upload.*
 import java.io.IOException
 import java.util.*
 
-
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
-class VideoWallpapersFragment : Fragment() {
+class UploadFragment: Fragment() {
 
     private val PICK_IMAGE_REQUEST = 71
     private var filePath: Uri? = null
@@ -74,7 +70,7 @@ class VideoWallpapersFragment : Fragment() {
             })?.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val downloadUri = task.result
-                   // addUploadRecordToDb(downloadUri.toString())
+                    // addUploadRecordToDb(downloadUri.toString())
                     Toast.makeText(activity,downloadUri.toString(), Toast.LENGTH_SHORT).show()
                     Log.d("Uploaded Image URL", downloadUri.toString())
 

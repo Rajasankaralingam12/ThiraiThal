@@ -10,11 +10,9 @@ app:cardCornerRadius="8dp">
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageview"
             style="@style/ImageStyle" />
-
         <TextView
             android:id="@+id/name"
             style="@style/ImageTextStyle"
-            android:text="@{item.name}"
             android:layout_alignBottom="@+id/imageview" />
 </RelativeLayout>
 </androidx.cardview.widget.CardView>

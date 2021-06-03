@@ -1,21 +1,25 @@
 package com.thiraithal.service
 
+import com.thiraithal.model.BaseResponse
 import com.thiraithal.model.FeaturedModel
 import com.thiraithal.model.PopularWallpaperModel
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 
 interface RetrofitService {
 
-/*@GET("movielist.json")
-fun getAllMovies() : Call<List<MovieModel>>*/
 @GET("FeaturedWallpapers")
 fun getAllMovies() : Call<List<FeaturedModel>>
 
-    @GET("FeaturedWallpapers")
+    @GET("popularWallpapers")
     fun getPopularWallpapers() : Call<List<PopularWallpaperModel>>
+
+    @POST("popularWallpapers")
+    fun addPopularImages(@Body popularWallpaperModel: PopularWallpaperModel) : Call<BaseResponse>
 
 companion object {
 
