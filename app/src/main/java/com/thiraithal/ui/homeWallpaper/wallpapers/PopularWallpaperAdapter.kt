@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.thiraithal.databinding.AdapterPopularWallpaperBinding
 import com.thiraithal.databinding.PopularAdapterHeaderBinding
 import com.thiraithal.model.PopularWallpaperModel
+import com.thiraithal.utils.SpacingItemDecorator
 import kotlinx.android.synthetic.main.fragment_wallpapers.view.*
 
 class PopularWallpaperAdapter( var pGetAllFeatureWallpapers: IGetAllFeatureWallpapers) : RecyclerView.Adapter< RecyclerView.ViewHolder >() {
@@ -77,7 +78,9 @@ class PopularWallpaperAdapter( var pGetAllFeatureWallpapers: IGetAllFeatureWallp
                 val adapter = WallpaperAdapter()
                 val llm = LinearLayoutManager(headerHolder.binding.getRoot().getContext())
                 llm.orientation = LinearLayoutManager.HORIZONTAL;
-                headerHolder.binding.rvFeaturedWallpapers.layoutManager = llm;
+                headerHolder.binding.rvFeaturedWallpapers.layoutManager = llm
+                val x = (headerHolder.binding.getRoot().getContext().resources.displayMetrics.density * 2).toInt()
+                headerHolder.binding.rvFeaturedWallpapers.addItemDecoration(SpacingItemDecorator(x))
                 headerHolder.binding.rvFeaturedWallpapers.adapter = adapter
                 iGetAllFeatureWallpapers.getAllFeatureList(adapter)
 

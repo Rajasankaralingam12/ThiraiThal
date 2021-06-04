@@ -21,9 +21,6 @@
     <style name="CardViewStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_marginTop">8dp</item>
-        <item name="android:layout_marginEnd">8dp</item>
-        <item name="android:layout_marginRight">8dp</item>
     </style>
 
     <style name="CardViewStyleSmall" parent="@style/CardViewStyle">

@@ -10,8 +10,15 @@ import com.thiraithal.R
 import com.thiraithal.databinding.FragmentCataegoriesBinding
 import com.thiraithal.databinding.FragmentWallpapersBinding
 import com.thiraithal.ui.base.BaseFragment
+import com.thiraithal.ui.base.BaseTestFragment
+import kotlinx.android.synthetic.main.fragment_base.view.*
+import kotlinx.android.synthetic.main.fragment_cataegories.*
+import kotlinx.android.synthetic.main.fragment_cataegories.view.*
+import kotlinx.android.synthetic.main.fragment_test_base.view.*
 
-class CategoriesFragment : BaseFragment(){
+class CategoriesFragment : BaseTestFragment(){
+
+    protected lateinit var categoriesBinding: ViewBinding
 
     fun newInstance( title: String?): CategoriesFragment {
         val categoriesFragment =
@@ -19,15 +26,20 @@ class CategoriesFragment : BaseFragment(){
         return categoriesFragment
     }
 
+/*
     override fun getViewBinding(): ViewBinding {
         return  FragmentCataegoriesBinding.inflate(layoutInflater)
     }
+*/
 
     override fun getViewModel() {
     }
 
     override fun onFragmentCreated(view: View) {
+
     }
+
+
 
     override fun onParentFragmentCreated(
         inflater: LayoutInflater,
@@ -35,9 +47,10 @@ class CategoriesFragment : BaseFragment(){
         savedInstanceState: Bundle?,
         binding: ViewBinding
     ) {
-        val view : View = inflater.inflate(R.layout.fragment_cataegories, container,false)
-        linLayFragment.addView(view)
+        categoriesBinding = FragmentCataegoriesBinding.inflate(layoutInflater)
+        mainViewBinding.root.llview.addView(FragmentCataegoriesBinding.inflate(layoutInflater).root)
         showSearchView(false)
+
     }
 
 }

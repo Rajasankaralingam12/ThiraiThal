@@ -5,7 +5,6 @@
         <item
             android:id="@+id/nav_wallpapers"
             android:icon="@drawable/ic_wallpaper"
-            android:iconTint="@android:color/white"
             android:title="Wallpapers" />
         <item
             android:id="@+id/nav_video_wallpapers"

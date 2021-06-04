@@ -1,5 +1,8 @@
 package com.thiraithal.ui.home
 
+/*
+* https://devcenter.heroku.com/articles/heroku-cli#download-and-install
+* */
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
@@ -28,6 +31,7 @@ class HomeScreen :BaseMenuActivity(){
     }
 
     override fun addDrawerListener(navigationView: NavigationView) {
+        navigationView.itemIconTintList = null
         navigationView.setNavigationItemSelectedListener { menuItem ->
             selectDrawerItem(menuItem)
             true

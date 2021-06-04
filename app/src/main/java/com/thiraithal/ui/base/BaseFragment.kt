@@ -13,6 +13,8 @@ import androidx.viewbinding.ViewBinding
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.thiraithal.R
+import com.thiraithal.databinding.FragmentBaseBinding
+import com.thiraithal.databinding.FragmentWallpapersBinding
 
 
 abstract class BaseFragment : Fragment(){

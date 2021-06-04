@@ -18,6 +18,7 @@ import com.thiraithal.model.PopularWallpaperModel
 import com.thiraithal.service.MainRepository
 import com.thiraithal.service.RetrofitService
 import com.thiraithal.ui.base.BaseFragment
+import com.thiraithal.utils.SpacingItemDecorator
 import kotlinx.android.synthetic.main.fragment_wallpapers.view.*
 
 /**
@@ -57,6 +58,8 @@ class WallpapersFragment : BaseFragment(), PopularWallpaperAdapter.IGetAllFeatur
         }
         popularWallpaperAdapter = PopularWallpaperAdapter(this)
         binding.root.rvPopularWallpaper.layoutManager = pGridLayoutManager;
+        val x = (resources.displayMetrics.density *2).toInt() //converting dp to pixels
+        binding.root.rvPopularWallpaper.addItemDecoration(SpacingItemDecorator(x))
         binding.root.rvPopularWallpaper.adapter = popularWallpaperAdapter
     }
 
