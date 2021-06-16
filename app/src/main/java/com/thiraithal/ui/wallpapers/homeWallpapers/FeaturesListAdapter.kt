@@ -1,4 +1,4 @@
-package com.thiraithal.ui.homeWallpaper.wallpapers
+package com.thiraithal.ui.wallpapers.homeWallpapers
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

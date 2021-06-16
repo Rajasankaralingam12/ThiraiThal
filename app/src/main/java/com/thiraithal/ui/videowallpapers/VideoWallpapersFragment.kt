@@ -48,8 +48,7 @@ class VideoWallpapersFragment : Fragment() {
         firebaseStore = FirebaseStorage.getInstance()
         storageReference = FirebaseStorage.getInstance().reference
 
-        btn_choose_image.setOnClickListener { launchGallery() }
-        btn_upload_image.setOnClickListener { uploadImage() }
+
 
     }
     private fun launchGallery() {

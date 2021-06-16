@@ -1,12 +1,11 @@
-package com.thiraithal.ui.homeWallpaper
+package com.thiraithal.ui.wallpapers
 
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.thiraithal.ui.base.BasePagerFragment
-import com.thiraithal.ui.homeWallpaper.categories.CategoriesFragment
-import com.thiraithal.ui.homeWallpaper.premium.PremiumFragment
-import com.thiraithal.ui.homeWallpaper.wallpapers.WallpapersFragment
-import com.thiraithal.ui.videowallpapers.VideoWallpapersFragment
+import com.thiraithal.ui.wallpapers.categories.CategoriesFragment
+import com.thiraithal.ui.wallpapers.premium.PremiumFragment
+import com.thiraithal.ui.wallpapers.homeWallpapers.WallpapersFragment
 
 class WallpaperPagerFragment : BasePagerFragment()
 {

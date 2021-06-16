@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:theme="@style/AppTheme.NoActionBar" android:name=".ui.home.HomeScreen"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:name=".ui.photoslider.WallpaperSliderActivity"/>
     </application>
 
 </manifest>

@@ -16,7 +16,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:id="@+id/llview"
-        android:background="@android:color/darker_gray"
+        android:background="@android:color/black"
         android:layout_height="match_parent"
         android:layout_width="match_parent" />
 

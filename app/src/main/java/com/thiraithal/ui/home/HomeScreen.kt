@@ -6,15 +6,16 @@ package com.thiraithal.ui.home
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
-import com.thiraithal.ui.homeWallpaper.wallpapers.WallpapersFragment
+import com.thiraithal.ui.wallpapers.homeWallpapers.WallpapersFragment
 import com.thiraithal.R
 import com.thiraithal.ui.videowallpapers.VideoWallpapersFragment
 import com.thiraithal.ui.base.BaseMenuActivity
-import com.thiraithal.ui.homeWallpaper.WallpaperPagerFragment
+import com.thiraithal.ui.wallpapers.WallpaperPagerFragment
 import com.thiraithal.ui.upload.UploadFragment
+import com.thiraithal.ui.wallpapers.premium.PremiumFragment
 
 
-class HomeScreen :BaseMenuActivity(){
+class HomeScreen : BaseMenuActivity(){
 
     override fun getLayoutResId(): Int {
       return R.layout.activity_home_screen
@@ -48,11 +49,11 @@ class HomeScreen :BaseMenuActivity(){
 
             R.id.nav_video_wallpapers ->{
                 fragment =
-                    VideoWallpapersFragment()
+                    PremiumFragment()
             }
             R.id.nav_ring_tones->{
                 fragment =
-                    WallpapersFragment()
+                    PremiumFragment()
             }
             R.id.nav_upload->{
                 fragment =

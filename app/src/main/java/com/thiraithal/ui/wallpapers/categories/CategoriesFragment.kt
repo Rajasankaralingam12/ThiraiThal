@@ -1,22 +1,15 @@
-package com.thiraithal.ui.homeWallpaper.categories
+package com.thiraithal.ui.wallpapers.categories
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.viewbinding.ViewBinding
-import com.thiraithal.R
 import com.thiraithal.databinding.FragmentCataegoriesBinding
-import com.thiraithal.databinding.FragmentWallpapersBinding
 import com.thiraithal.ui.base.BaseFragment
-import com.thiraithal.ui.base.BaseTestFragment
-import kotlinx.android.synthetic.main.fragment_base.view.*
-import kotlinx.android.synthetic.main.fragment_cataegories.*
-import kotlinx.android.synthetic.main.fragment_cataegories.view.*
 import kotlinx.android.synthetic.main.fragment_test_base.view.*
 
-class CategoriesFragment : BaseTestFragment(){
+class CategoriesFragment : BaseFragment(){
 
     protected lateinit var categoriesBinding: ViewBinding
 
@@ -32,8 +25,6 @@ class CategoriesFragment : BaseTestFragment(){
     }
 */
 
-    override fun getViewModel() {
-    }
 
     override fun onFragmentCreated(view: View) {
 

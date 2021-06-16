@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rlSliderUserView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivWallpaperOwned"
+                android:layout_marginLeft="4dp"
+                app:shapeAppearanceOverlay="@style/roundedCorners"
+                style="@style/ImageStyle"
+                android:background="@color/colorAccent"
+                android:layout_height="50dp"
+                android:layout_width="50dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/ivWallpaperOwned"
+                android:layout_centerVertical="true"
+                android:textColor = "@android:color/white"
+                android:id="@+id/tvWallpaperOwned"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <com.thiraithal.utils.RoundedRelativeLayout
+            android:layout_marginTop="8dp"
+            android:id="@+id/rlSliderView"
+            android:layout_below="@+id/rlSliderUserView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/slideWallpaper"
+                style="@style/ImageStyle"
+                android:scaleType="centerCrop"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent" />
+        </com.thiraithal.utils.RoundedRelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

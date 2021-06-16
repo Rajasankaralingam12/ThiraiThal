@@ -1,33 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:padding="30dp"
-    android:orientation="vertical"
     >
 
+<RelativeLayout
+    android:id="@+id/rlAddImage"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:text="Select Photo from Device"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <ImageView
         android:id="@+id/image_preview"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_add_photo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_marginTop="16dp"
+        android:id="@+id/etUploaderName"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        app:backgroundTint="@android:color/white"
+        android:hint="Enter your Name"
+        android:inputType="text"
+        android:layout_below="@+id/image_preview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+    <Button
+        android:id="@+id/btn_upload_image"
+        android:text="Upload"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/etUploaderName"
+        android:textColor="@android:color/black"
+        android:background="@android:color/white"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
 
-    <Button
-        android:id="@+id/btn_choose_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Choose image"
-        />
+</RelativeLayout>
 
-    <Button
-        android:id="@+id/btn_upload_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Upload image"
-        />
 
-</LinearLayout>
+<!--    <ProgressBar
+        android:id="@+id/pbFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:clickable="false"
+        android:indeterminateTint="@android:color/white"
+        android:minHeight="50dp"
+        android:minWidth="50dp" />-->
+
+</RelativeLayout>

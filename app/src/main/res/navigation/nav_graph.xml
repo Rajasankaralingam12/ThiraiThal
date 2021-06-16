@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.thiraithal.ui.homeWallpaper.wallpapers.WallpapersFragment"
+        android:name="com.thiraithal.ui.wallpapers.homeWallpapers.WallpapersFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_wallpapers">
 

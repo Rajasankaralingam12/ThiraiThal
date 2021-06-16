@@ -1,16 +1,23 @@
-package com.thiraithal.ui.homeWallpaper.wallpapers
+package com.thiraithal.ui.wallpapers.wallpapersViewmodel
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
 import com.thiraithal.model.BaseResponse
 import com.thiraithal.model.FeaturedModel
 import com.thiraithal.model.PopularWallpaperModel
 import com.thiraithal.service.MainRepository
+import com.thiraithal.service.RetrofitService
+import com.thiraithal.ui.wallpapers.homeWallpapers.pagination.WallpaperPagingSource
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class WallpaperViewModel constructor(private val repository: MainRepository)  : ViewModel() {
+class WallpaperViewModel constructor( val repository: MainRepository)  : ViewModel() {
+
 
     val featuresList = MutableLiveData<List<FeaturedModel>>()
     val popularWallpaperModel = MutableLiveData<List<PopularWallpaperModel>>()
@@ -31,9 +38,9 @@ class WallpaperViewModel constructor(private val repository: MainRepository)  : 
         })
     }
 
-    fun getPopularWallpapers() {
+    fun getPopularWallpapers(initPage: Int, pageLimit : Int) {
 
-        val response = repository.getPopularWallpapers()
+        val response = repository.getPopularWallpapers(initPage, pageLimit)
         response.enqueue(object : Callback<List<PopularWallpaperModel>> {
             override fun onResponse(call: Call<List<PopularWallpaperModel>>, response: Response<List<PopularWallpaperModel>>) {
                 popularWallpaperModel.postValue(response.body())
@@ -43,6 +50,12 @@ class WallpaperViewModel constructor(private val repository: MainRepository)  : 
                 errorMessage.postValue(t.message)
             }
         })
+    }
+
+
+    fun getPopularWallpapers2(): Flow<PagingData<PopularWallpaperModel>> {
+        return Pager (config = PagingConfig(pageSize = 10, maxSize = 200),
+            pagingSourceFactory = { WallpaperPagingSource(repository) }).flow.cachedIn(viewModelScope)
     }
 
     fun addPopularImages(popularWallpaperModel: PopularWallpaperModel) {

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools">
+<RelativeLayout
+    android:id="@+id/rlSliderBackground"
+    android:background="@android:color/black"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rlHeadingView"
+        android:layout_margin="8dp"
+        android:elevation="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivBackButton"
+            android:layout_width="30dp"
+            android:background="@drawable/ic_back_button"
+            android:scaleType="fitXY"
+            android:layout_height="30dp"/>
+        <TextView
+            android:id="@+id/ivRupeeButton"
+            android:layout_width="50dp"
+            android:padding="3dp"
+            android:gravity="center"
+            android:background="@drawable/ic_layout_rounded_grey"
+            android:textColor="@android:color/white"
+            android:text = "₹10"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+
+
+    <ImageView
+        android:id="@+id/ivSliderBackground"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:layout_height="match_parent"/>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_below="@+id/rlHeadingView"
+        android:layout_above="@+id/rlFooterView"
+        android:layout_width="match_parent"
+        card_view:cardBackgroundColor="@android:color/transparent"
+        android:layout_height="match_parent">
+    </androidx.viewpager.widget.ViewPager>
+
+    <RelativeLayout
+        android:id="@+id/rlFooterView"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:paddingBottom="8dp"
+        android:elevation="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivShareBtn"
+            android:layout_marginTop="16dp"
+            android:layout_width="30dp"
+            android:layout_toLeftOf="@+id/ivDownloadBtn"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/ic_share"
+            android:scaleType="fitXY"
+            android:layout_height="30dp"/>
+    <ImageView
+        android:id="@+id/ivDownloadBtn"
+        android:layout_marginTop="16dp"
+        android:layout_width="45dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_downlaod"
+        android:scaleType="fitXY"
+        android:layout_height="45dp"/>
+        <ImageView
+            android:id="@+id/ivfavBtn"
+            android:layout_marginTop="16dp"
+            android:layout_width="30dp"
+            android:layout_toRightOf="@+id/ivDownloadBtn"
+            android:layout_marginLeft="32dp"
+            android:background="@drawable/ic_favourite"
+            android:scaleType="fitXY"
+            android:layout_height="30dp"/>
+    </RelativeLayout>
+</RelativeLayout>
+</layout>
